@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>registropuesto</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='Estilos/style_puesto.css')}}">
+</head>
+
+<body>
+    <header>
+        <nav class="navegacion">
+            <ul class="menu">
+                <li><a href="{{url_for('Inicio')}}">Inicio</a></li>
+                <li><a href="{{url_for('Acerca_de')}}">Nosotros</a></li>
+                <li><a href="#">Recursos Humanos</a>
+                    <ul class="submenu">
+                        <li><a href="{{url_for('Login_RH')}}">Mantenimineto del planilla</a></li>
+                        <li><a href="{{url_for('LoginRH_Puesto')}}">Registrar Puesto</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="{{url_for('LoginUsuario')}}">Inciar Sesion</a>
+                    <ul class="submenu">
+                        <li><a href="{{url_for('NuevoUsuario')}}">Registrarse</a></li>
+                    </ul>
+                </li>
+
+
+                <li><a href="{{url_for('Contactos')}}">Contacto</a></li>
+                <div id="Buscar">
+                    <input type="text" placeholder="Buscar" id="inputBuscar"></label>
+                    <input type="submit" value="Buscar" id="btnBuscar">
+                </div>
+
+            </ul>
+        </nav>
+    </header>
+    <aside id="Contenido">
+        <h1 id="h1_titulo">Nuevo Puesto</h1>
+        <!--Aqui se comprueba si el flah tiene mensajes o no-->
+
+        {% with mensaje = get_flashed_messages() %}
+        <!--se gurada  en mensaje lo que tiene flash-->
+
+        {% if mensaje %}
+        <!--Si la variable mensaje tiene contenido-->
+        {% for i in mensaje %}
+        <!---se recorre en de 1 en 1 -->
+
+        <p class="Alerta">{{mensaje}}</p> <!-- se imprime con un parrago-->
+
+        <!-- se cieraa el if , for y el with-->
+
+        {% endfor %}
+
+        {% endif %}
+
+        {% endwith %}
+        <br><br>
+        <form action="/Puesto" method="POST">
+            <label for="" id="lblpass">Nombre Puesto <input type="text" name="Nombre" id="inputform"
+                    class="field"></label>
+            <br><br>
+            <label for="" id="lblpass">Salario Base Minimo <input type="text" name="SalarioMin" id="inputform"
+                    class="field"></label>
+            <br><br>
+            <label for="" id="lblpass">Salario Base Maximo <input type="text" name="SalarioMax" id="inputform"
+                    class="field"></label>
+            <br><br>
+            <label for="" id="lblpass">Titulos Necesarios <input type="text" name="Titulo" id="inputform"
+                    class="field"></label>
+            <br><br>
+            <label for="" id="lblpass">id_Departamento <input type="text" name="id_depto" id="inputform"
+                    class="field"></label>
+            <br><br>
+            <label for="" id="lblpass">Descripcion</label>
+            <br><br>
+            <textarea name="text_descripcion" id="text_descripcion" cols="30" rows="10"></textarea>
+            <br><br>
+            <input type="submit" name="Confirmar" id="" value="Registrar Puesto" class="btn-green">
+        </form>
+        <div id="depto">
+            <h1 id="h1_titulo">Nuevo Departamento</h1>
+            <br><br>
+            <form action="/Departamento" method="POST" id="form_depto">
+                <label for="" id="lblpass">Nombre <input type="text" name="NombreDep" id="inputform"
+                        class="field"></label>
+                <br><br><br>
+                <input type="submit" value="Registrar Departamento" name="Registrar_dep" class="btn-green">
+            </form>
+
+        </div>
+
+    </aside>
+
+    <footer>
+        <h2>Sofware S.A</h2>
+        <p>Derechos reservados a la empresa Sofware</p>
+        <p>2021</p>
+
+    </footer>
+
+</body>
+
+</html>

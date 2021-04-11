@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contactos</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='Estilos/style_contacto.css')}}">
+</head>
+
+<body>
+    <header>
+        <nav class="navegacion">
+            <ul class="menu">
+                <li><a href="{{url_for('Inicio')}}">Inicio</a></li>
+                <li><a href="{{url_for('Acerca_de')}}">Nosotros</a></li>
+                <li><a href="#">Recursos Humanos</a>
+                    <ul class="submenu">
+                        <li><a href="{{url_for('Login_RH')}}">Mantenimineto del planilla</a></li>
+                        <li><a href="{{url_for('LoginRH_Puesto')}}">Registrar Puesto</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="{{url_for('LoginUsuario')}}">Inciar Sesion</a>
+                    <ul class="submenu">
+                        <li><a href="{{url_for('NuevoUsuario')}}">Registrarse</a></li>
+                    </ul>
+                </li>
+
+
+                <li><a href="{{url_for('Contactos')}}">Contacto</a></li>
+                <div id="Buscar">
+                    <input type="text" placeholder="Buscar" id="inputBuscar"></label>
+                    <input type="submit" value="Buscar" id="btnBuscar">
+                </div>
+
+            </ul>
+        </nav>
+    </header>
+
+    <aside id="Contenido">
+        <h1 id="h1_titulo">Contactos:</h1>
+        <div id="main-container">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Telefono</th>
+                       
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for i in contactos %}
+                    <tr>
+                        <td>{{i.1}}</td>
+                        <td>{{i.2}}</td>
+
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+    
+                
+            </table>
+        </div>
+
+            <h1 id="h1_titulo2">Como llegar</h1>
+            <br>
+            <br>
+            <div id="lugar">
+                <p id="parrafo"> Del BARRIO EL MOLINO  de la Funeraria La Última Joya, 300 metros Sur,</p>
+                <p id="parrafo">o bien del Colegio San Luis Gonzaga 200 metros oeste y 250 metros al sur</p>
+
+            </div>
+
+    </aside>
+
+
+    <footer>
+        <h2>Sofware S.A</h2>
+        <p>Derechos reservados a la empresa Sofware</p>
+        <p>2021</p>
+
+    </footer>
+    
+
+</body>
+
+</html>

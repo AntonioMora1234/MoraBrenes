@@ -1,0 +1,174 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+    background: #073642;
+	
+}
+
+header{
+	width: 100%;
+}
+
+.navegacion{
+	width: 1500px;
+	margin: 30px auto;
+	background: #fd7e14;
+    position: relative;
+    bottom:20px;
+    height: 100px;
+    font-size: 25px;
+}
+
+#Buscar
+{
+    margin-left: 1000px;
+    position: relative;
+    bottom: 40px;
+}
+
+#inputBuscar
+{
+    width: 250px;
+    height: 40px;
+}
+
+#btnBuscar
+{
+    width: 100px;
+    height: 35px;
+}
+
+
+.navegacion ul{
+	list-style: none;
+}
+
+.menu > li{
+	position: relative;
+	display: inline-block;
+}
+
+.menu > li > a{
+	display: block;
+	padding: 15px 20px;
+	color:white;
+	font-family: 'Open sans';
+	text-decoration: none;
+}
+
+.menu li a:hover{
+	color: #CE7D35;
+	transition: all .3s;
+}
+
+/* Submenu*/
+
+.submenu{
+	position: absolute;
+	background: #073642;
+	width: 120%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.5s;
+}
+
+.submenu li a{
+	display: block;
+	padding: 15px;
+	color: #fff;
+	font-family: 'Open sans';
+	text-decoration: none;
+}
+
+.menu li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
+}
+
+#h1_titulo
+{
+    position:relative;
+    margin-left: 50px;
+    color:lightgreen;
+    top: 25px;
+}
+
+
+#main-container{
+    position: relative;
+    top: 40px;
+    left: 300px;
+	width: 600px;
+}
+
+table{
+	background-color: white;
+	text-align: left;
+	border-collapse: collapse;
+	width: 500px;
+}
+
+th, td{
+	padding: 20px;
+}
+
+thead{
+	background-color: #246355;
+	border-bottom: solid 5px #0F362D;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover td{
+	background-color: #369681;
+	color: white;
+}
+
+
+#h1_titulo2
+{
+    position:relative;
+    margin-left: 50px;
+    color:lightgreen;
+    top: 100px;
+}
+
+#lugar
+{
+    position: relative;
+    margin-left: 50px;
+    color:lightgreen;
+    top: 105px;
+    font-size: 25px;
+    
+}
+
+
+footer
+{
+    position:relative;
+    top: 400px;
+    position: relative;
+    padding-top: 15px;
+    width: 100%;
+    height:135px ;
+    background-color: black;
+    color:white;
+    text-align: center;
+   
+}
+
+
+
+
+
+

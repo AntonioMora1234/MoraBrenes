@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>style_gestionarplanilla</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='Estilos/style_gestionarplanilla.css')}}">
+    
+</head>
+<body>
+	<header>
+		<nav class="navegacion">
+			<ul class="menu">
+				<li><a href="{{url_for('Inicio')}}">Inicio</a></li>
+				<li><a href="{{url_for('Acerca_de')}}">Nosotros</a></li>
+				<li><a href="#">Recursos Humanos</a>
+					<ul class="submenu">
+						<li><a href="{{url_for('Login_RH')}}">Mantenimineto del planilla</a></li>
+						<li><a href="{{url_for('LoginRH_Puesto')}}">Registrar Puesto</a></li>
+					</ul>
+				</li>
+
+                <li><a href="{{url_for('LoginUsuario')}}">Inciar Sesion</a>
+					<ul class="submenu">
+						<li><a href="{{url_for('NuevoUsuario')}}">Registrarse</a></li>
+					</ul>
+				</li>
+
+
+				<li><a href="{{url_for('Contactos')}}">Contacto</a></li>
+                <div id="Buscar">
+                    <input type="text" placeholder="Buscar" id="inputBuscar"></label>
+                    <input type="submit" value="Buscar" id="btnBuscar">
+                </div>
+              
+			</ul>
+		</nav>
+	</header>
+
+    <aside id="Contenido">
+        <div id="FormularioPlanilla">
+            <h1 id="h1_titulo">Gestionar Planilla</h1>
+            <input type="submit" value="Historial" name="Historial" form="Formulario" class="btn-green" id="btnhistorial">
+            <!--Aqui se comprueba si el flah tiene mensajes o no-->
+
+{% with mensaje = get_flashed_messages() %} <!--se gurada  en mensaje lo que tiene flash-->
+
+{% if mensaje %} <!--Si la variable mensaje tiene contenido-->
+{% for i in mensaje  %} <!---se recorre en de 1 en 1 -->
+
+<p class="Alerta">{{mensaje}}</p> <!-- se imprime con un parrago-->
+
+<!-- se cieraa el if , for y el with-->
+
+{% endfor %}
+
+{% endif %}
+
+{% endwith %}
+            <br>
+            <form action="/formInput"  method="POST" id="Formulario">             
+                <label for="user_id" id="lblpass">Identificacion: <input type="text" name="user_id" id="inputform" value="{{resultado.0}}" class="field"></label>
+                <br>
+                <br>
+                <label for="Fecha" id="lblpass">Fecha: <input type="text" name="fecha" value="{{resultado.1}}" class="field" id="inputform"></label>
+                <br><br>
+                <label for="user_inc" id="lblpass">Dias incapacidad: <input type="text" name="" disabled value="{{resultado.2}}" class="field" id="inputform"></label>
+                <br>
+                <br>
+                <label for="" id="lblpass">Asosiaciacion  <select class="" id="" name="user_aso" value="" class="field">
+                    <option>{{resultado.3}}</option>
+                    <option>Activo</option>
+                    <option>Inactivo</option>
+                </select></label>
+                <br>
+                <br>
+                <div>
+                    <label for="" id="lblpass">Salario  <input type="text" name="Salario" id="inputform" value="{{resultado.4}}" class="field"></label>
+                    <label for="" id="lblpass">Cuenta  <input type="text" name="Cuenta" id="" value="{{resultado.5}}" class="field"></label>
+                  </div>          
+                <br>
+                <br>
+                <label for="" id="lblpass">Estado <select name="user_estado" class="field" id="inputform">
+                    <option>{{resultado.6}}</option>-->
+                    <option>Activo</option>
+                    <option>Inactivo</option>
+                </select></label>
+    
+                <label for="" id="lblpass">Permiso<select class="" id="" name="id_permiso" class="field" id="inputform">
+                    <option>{{resultado.7}}</option>
+                    <option>1</option>
+                    <option>2</option>
+                </select></label>
+              
+                <label for="user_inc" id="lblpass">Puesto: <input type="number" name="id_puesto" value="{{resultado.7}}" id="inputform" class="field"></label>
+              <br>
+              <br>
+              <br>
+              <input type="submit" value="Guardar" id="btnGuardarPlanilla" name="Guardar" class="btn-green">
+              <input type="submit" value="Atras" name="Atras" id="btnAtras" class="btn-green">   
+            </form>
+
+
+        </div>
+      
+        <div id="FormularioPlanilla">
+            <table>
+                <thead>
+                    <th>Fecha</th>
+                    <th>Salario Neto</th>
+                    <th>Incapacidad</th>
+                    <th>CCSS</th>
+                    <th>Banco Popular</th>
+                    <th>Asosiaciacion</th>
+                    <th>Salario Bruto</th>
+                    <th><input type="submit"  value="Calcular Planilla" name="Calcular" form="Formulario" class="btn-green2"></th>
+                    
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td>N/A</td>
+                        <td><input type="submit" value="Eliminar Planilla" name="Eliminar" form="Formulario" class="btn-green2"></td>
+                        <td><input type="submit" value="Aprobar" name="Aprobar" form="Formulario" id="btnAprobar" class="btn-green2"></td>
+              
+                    </tr>
+                   
+                </tbody>
+            </table>
+    
+        </div>
+
+    </aside>
+       
+   
+    <footer>
+        <h2>Sofware S.A</h2>
+        <p>Derechos reservados a la empresa Sofware</p>
+        <p>2021</p>
+    </footer>
+    
+
+</body>
+</html>

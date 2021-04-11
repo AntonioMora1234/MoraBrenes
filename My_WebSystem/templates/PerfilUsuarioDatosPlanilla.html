@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>style_perfilusuario</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='Estilos/style_perfilusuario.css')}}">
+    
+</head>
+<body>
+	<header>
+		<nav class="navegacion">
+			<ul class="menu">
+				<li><a href="{{url_for('Inicio')}}">Inicio</a></li>
+				<li><a href="{{url_for('Acerca_de')}}">Nosotros</a></li>
+				<li><a href="#">Recursos Humanos</a>
+					<ul class="submenu">
+						<li><a href="{{url_for('Login_RH')}}">Mantenimineto del planilla</a></li>
+						<li><a href="{{url_for('LoginRH_Puesto')}}">Registrar Puesto</a></li>
+					</ul>
+				</li>
+
+                <li><a href="{{url_for('LoginUsuario')}}">Inciar Sesion</a>
+					<ul class="submenu">
+						<li><a href="{{url_for('NuevoUsuario')}}">Registrarse</a></li>
+					</ul>
+				</li>
+
+
+				<li><a href="{{url_for('Contactos')}}">Contacto</a></li>
+                <div id="Buscar">
+                    <input type="text" placeholder="Buscar" id="inputBuscar"></label>
+                    <input type="submit" value="Buscar" id="btnBuscar">
+                </div>
+              
+			</ul>
+		</nav>
+	</header>
+
+    <aside id="Contenido">
+        <h1 id="h1_titulo"> Perfil</h1>
+        <div id="main-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Identificaion: </td>
+                            <td>{{resultado.0}}</td>
+                        </tr>
+                        <tr>
+                            <td>Nombre: </td>
+                            <td>{{resultado.1}}</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>PrimerApellido: </td>
+                            <td>{{resultado.2}}</td>
+                        </tr>
+                        <tr>
+                            <td>SegundoApellido: </td>
+                            <td>{{resultado.3}}</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Nacionalidad: </td>
+                            <td>{{resultado.4}}</td>
+                        </tr>
+                        <tr>
+                            <td>Direccion: </td>
+                            <td>{{resultado.5}}</td>
+                            <td><a href="info_direccion/{{resultado.0}}" id="enlace">Modificar</a></td>
+                        </tr>
+                        <tr>
+                            <td>Asosiaciacion: </td>
+                            <td>{{resultado.6}}</td>
+                        </tr>
+                        <tr>
+                            <td>FechaIngreso: </td>
+                            <td>{{resultado.7}}</td>
+                        </tr>
+                        <tr>
+                            <td>Telefono: </td>
+                            <td>{{resultado.8}}</td>
+                            <td><a id="enlace" href="info_cel/{{resultado.0}}">Modificar</a></td>      
+                        </tr>
+
+                    </thead>
+                    
+                </table>
+            </div>
+
+                <div id= "main-container">
+                    <h1><a href="{{url_for('Incapacidad')}}" id="enlace">Registrar Incapacidad</a></h1>
+                    <br>
+                    <br>
+                    <!--Tabla Planilla-->
+                <table id="table_planilla">
+                    <thead>
+                        <th>Fecha</th>
+                        <th>Salario Neto</th>
+                        <th>Incapacidad</th>
+                        <th>CCSS</th>
+                        <th>Banco Popular</th>
+                        <th>Asosiacion</th>
+                        <th>Salario Bruto</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{planilla.1}}</td>
+                            <td>{{planilla.2}}</td>
+                            <td>{{planilla.3}}</td>
+                            <td>{{planilla.4}}</td>
+                            <td>{{planilla.5}}</td>
+                            <td>{{planilla.6}}</td>
+                            <td>{{planilla.7}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+            </div>
+
+
+    </aside>
+       
+    <footer>
+        <h2>Sofware S.A</h2>
+        <p>Derechos reservados a la empresa Sofware</p>
+        <p>2021</p>
+    </footer>
+
+</body>
+</html>

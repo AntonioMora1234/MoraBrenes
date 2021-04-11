@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Acerca_de</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='Estilos/style_nosotros.css')}}">
+</head>
+<body>
+	<header>
+		<nav class="navegacion">
+			<ul class="menu">
+				<li><a href="{{url_for('Inicio')}}">Inicio</a></li>
+				<li><a href="{{url_for('Acerca_de')}}">Nosotros</a></li>
+				<li><a href="#">Recursos Humanos</a>
+					<ul class="submenu">
+						<li><a href="{{url_for('Login_RH')}}">Mantenimineto del planilla</a></li>
+						<li><a href="{{url_for('LoginRH_Puesto')}}">Registrar Puesto</a></li>
+					</ul>
+				</li>
+
+                <li><a href="{{url_for('LoginUsuario')}}">Inciar Sesion</a>
+					<ul class="submenu">
+						<li><a href="{{url_for('NuevoUsuario')}}">Registrarse</a></li>
+					</ul>
+				</li>
+
+
+				<li><a href="{{url_for('Contactos')}}">Contacto</a></li>
+                <div id="Buscar">
+                    <input type="text" placeholder="Buscar" id="inputBuscar"></label>
+                    <input type="submit" value="Buscar" id="btnBuscar">
+                </div>
+              
+			</ul>
+		</nav>
+	</header>
+
+    <aside id="Contenido">
+        <article class="Articulo">
+            <h2 id="h2_titulo1">Quienes Somos</h2>
+            <br>
+            <br>
+            <p id="parrafo">Una moderna plataforma que brinda información relevante sobre las tendencias del mercado en empresas de 
+            <p id="parrafo"> alta tecnología, carreras de mayor demanda, cursos y opciones de capacitación en línea, noticias 
+            <p id="parrafo">recientes, eventos y mucho más. </p>
+
+            <p id="parrafo">Esta iniciativa liderada por Software S.A, busca colaborar en el desarrollo profesional y personal.</p>
+            <p id="parrafo"> de los candidatos que mediante la práctica profesional inician su primer contacto con el </p>
+            <p id="parrafo">mercado laboral,o bien, que por este medio complementan su experiencia laboral</p>
+    
+            <p id="parrafo">Como candidato a nuestra empres tendrás la  opción de crear un perfil de usuario con </p>
+            <p id="parrafo"> detalles de tu informacion personal  y áreas de interés, y podrás postularte para</p>
+            <p id="parrafo"> prácticas profesionales acorde a los requistos de los puestos de nuestra empresa.</p>
+
+            <p id="parrafo">Con el fin de elevar la calidad de vida y fomentar los vínculos de unión y cooperación entre los</p>
+            <p id="parrafo"> trabajadores y sus patronos, las asociaciones solidaristas cuentan con una efectiva</p>
+            <p id="parrafo">cultura de ahorro para asociados.</p>
+            <p id="parrafo"> Antes de empezar a ahorrar, el asociado debe acercarse a la asociación solidarista para conocer </p>
+            <p id="parrafo">aspectos como el porcentaje de ahorro, el cual deberá efectuar una vez afiliado. La calidad de</p>
+            <p id="parrafo"> los controles internos, como el resguardo de su dinero y la eficacia de su inversión,  le dará la</p>
+            <p id="parrafo">tranquilidad de formar parte de dicha asociación.</p>
+            <p id="parrafo"> El financiamiento de las asociaciones, proviene del aporte del patrono y el ahorro del trabajador.</p>
+            <p id="parrafo">Este capital de trabajo permite efectuar operaciones rentables como el crédito, inversiones y otras</p>
+            <p id="parrafo">actividades socioeconómicas</p>
+        </article>
+
+        <article id="Articulo2">
+            <br>
+            <br>
+            <h2 id="h2_titulo1">Acerca los desarrolladores de este programa</h2>
+            <br>
+            <br>
+            <p id="parrafo2">Este Programa fue desarollado por Gabriel Moya Arce y William Romero Muños para el curso de </p>
+            <p id="parrafo2">admisntradion de base de datos del primer cuatrimeste del 2021 para la profesora Milena Mata Sojo</p>
+        </article>
+
+    </aside>
+
+
+    <footer>
+        <h2>Sofware S.A</h2>
+        <p>Derechos reservados a la empresa Sofware</p>
+        <p>2021</p>
+
+    </footer>
+
+</body>
+</html>

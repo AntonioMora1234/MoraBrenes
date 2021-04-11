@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>InicioSesion_RH</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='Estilos/style_login.css')}}">
+    
+</head>
+<body>
+	<header>
+		<nav class="navegacion">
+			<ul class="menu">
+				<li><a href="{{url_for('Inicio')}}">Inicio</a></li>
+				<li><a href="{{url_for('Acerca_de')}}">Nosotros</a></li>
+				<li><a href="#">Recursos Humanos</a>
+					<ul class="submenu">
+						<li><a href="{{url_for('Login_RH')}}">Mantenimineto del planilla</a></li>
+						<li><a href="{{url_for('LoginRH_Puesto')}}">Registrar Puesto</a></li>
+					</ul>
+				</li>
+
+                <li><a href="{{url_for('LoginUsuario')}}">Inciar Sesion</a>
+					<ul class="submenu">
+						<li><a href="{{url_for('NuevoUsuario')}}">Registrarse</a></li>
+					</ul>
+				</li>
+
+				<li><a href="{{url_for('Contactos')}}">Contacto</a></li>
+                <div id="Buscar">
+                    <input type="text" placeholder="Buscar" id="inputBuscar"></label>
+                    <input type="submit" value="Buscar" id="btnBuscar">
+                </div>
+              
+			</ul>
+		</nav>
+	</header>
+     
+
+    <aside id="Contenido">
+           <!--Aqui se comprueba si el flah tiene mensajes o no-->
+
+   {% with mensaje = get_flashed_messages() %} <!--se gurada  en mensaje lo que tiene flash-->
+
+   {% if mensaje %} <!--Si la variable mensaje tiene contenido-->
+   {% for i in mensaje  %} <!---se recorre en de 1 en 1 -->
+   <p class="Alerta">{{mensaje}}</p>
+
+   <!-- se cieraa el if , for y el with-->
+
+   {% endfor %}
+
+   {% endif %}
+
+   {% endwith %}
+        <form action="/Login_RH" method="POST" id="">
+            <label for="user_id" id="lblpass">
+                Usuario: <input type="text" name="user_id" id="inputform" class="field">
+            </label>
+            <br><br><br>
+
+            <label for="user_pass" id="lblpass">
+                Contraseña <input type="password" name="user_pass" id="inputform" class="field">
+            </label>
+            <br><br><br>
+
+            <label for="" id="lblpass" id="lblpass">
+                id_permiso <input type="text" name="id_permiso" id="inputform" class="field">
+            </label>
+            <br>
+            <br>
+            <br>
+            <div id="BotonesRH">
+                <input type="submit" value="Inciar sesion" name="InciarSesion"  class="btn btn-green">  
+            </div>
+        </form>
+      
+    </aside>
+       
+    <footer>
+        <h2>Sofware S.A</h2>
+        <p>Derechos reservados a la empresa Sofware</p>
+        <p>2021</p>
+
+    </footer>
+
+</body>
+</html>
